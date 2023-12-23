@@ -36,7 +36,7 @@ def parallel_bfs(graph, start):
 
 def server_program():
     server_socket = socket.socket()
-    server_socket.bind(('127.0.0.1', 12345))
+    server_socket.bind(('127.0.0.1', 8081))
     server_socket.listen(1)
     print('Server is ready and listening')
 
@@ -46,6 +46,7 @@ def server_program():
     graph = json.loads(data)
     print("Graph received from client: ", graph)
     start = graph['start']
+    print(f"Visited: {start}")
     del graph['start']
     parallel_bfs(graph, start)
 

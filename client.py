@@ -4,7 +4,7 @@ import json
 
 def client_program():
     client_socket = socket.socket()
-    client_socket.connect(('127.0.0.1', 12345))
+    client_socket.connect(('127.0.0.1', 8081))
 
     graph = {
         '1': ['2', '3'],
