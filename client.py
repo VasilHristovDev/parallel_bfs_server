@@ -4,18 +4,17 @@ import json
 
 def client_program():
     client_socket = socket.socket()
-    client_socket.connect(('127.0.0.1', 8081))
+    client_socket.connect(('127.0.0.1', 12345))
 
-    graph = {
-        '1': ['2', '3'],
-        '2': ['4', '5'],
-        '3': [],
-        '4': [],
-        '5': [],
-        'start': '1'
-    }
+    # Accept user input for the graph
+    graph = eval(input("Enter the graph: "))
+
     data = json.dumps(graph)
     client_socket.send(data.encode())
+
+    response = client_socket.recv(1024).decode()
+    visited = json.loads(response)
+    print("Nodes visited in BFS order: ", visited)
 
     client_socket.close()
 
