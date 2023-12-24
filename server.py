@@ -67,8 +67,9 @@ def exit_check():
 def server_program():
     threading.Thread(target=exit_check).start()
 
+    port = 12345
     server_socket = socket.socket()
-    server_socket.bind(('127.0.0.1', 12345))
+    server_socket.bind(('127.0.0.1', port))
     server_socket.listen(1)
 
     print("Server is ready and listening. Type 'exit' at any time to shut down the server.")

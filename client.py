@@ -3,8 +3,9 @@ import json
 
 
 def client_program():
+    port = 12345
     client_socket = socket.socket()
-    client_socket.connect(('127.0.0.1', 12345))
+    client_socket.connect(('127.0.0.1', port))
 
     # Accept user input for the graph
     graph = eval(input("Enter the graph: "))
