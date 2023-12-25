@@ -55,7 +55,10 @@ To run the client, ensure that `client.py` is in your current directory and run 
 python3 client.py
 ```
 
-When prompted, enter the graph information.
+When prompted, enter the graph information in the following format:
+```
+{'1': ['2', '3'], '2': ['4', '5'], '3': [], '4': [], '5': [], 'start': '1'}
+```
 
 ## Testing
 
@@ -64,7 +67,7 @@ Unit tests are included in the `tests.py` file.
 To run the tests, navigate to the directory containing `tests.py` in your terminal/command prompt and use the command:
 
 ```bash
-python -m unittest tests.py
+python3 -m unittest tests.py
 ```
 
 ## License
